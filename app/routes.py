@@ -1,20 +1,14 @@
-from flask import render_template
-from app import app
-from app.forms import LoginForm
-from flask import render_template, flash, redirect, url_for
-from flask_login import current_user, login_user
-from flask_login import logout_user
-from flask_login import login_required
-import sqlalchemy as sa
-from app import db
-from app.forms import EditProfileForm
-from app.models import User
-from flask import request
-from urllib.parse import urlsplit
-from app import db
-from app.forms import RegistrationForm
 from datetime import datetime, timezone
-from app.forms import EmptyForm
+from urllib.parse import urlsplit
+
+from flask import render_template, flash, redirect, url_for, request
+from flask_login import current_user, login_user, logout_user, login_required
+import sqlalchemy as sa
+
+from app import app, db
+from app.forms import LoginForm, EditProfileForm, RegistrationForm, EmptyForm
+from app.models import User
+
 
 
 @app.route('/')

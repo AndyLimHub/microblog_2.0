@@ -1,12 +1,14 @@
 from datetime import datetime, timezone
+from hashlib import md5
 from typing import Optional
+
 import sqlalchemy as sa
 import sqlalchemy.orm as so
-from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
+
+from app import db, login
 from flask_login import UserMixin
-from app import login
-from hashlib import md5
+
 
 @login.user_loader
 def load_user(id):
