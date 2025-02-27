@@ -18,7 +18,10 @@ venv.bak/
 *.egg-info/
 dist/
 build/
+__pycache__/
 *.pyc
+*.pyo
+
 
 # Flask specific
 instance/
