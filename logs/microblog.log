@@ -1,0 +1,49 @@
+2025-03-03 17:09:15,001 ERROR: Exception on / [GET] [in /Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/microblog_2.0/app/routes.py", line 36, in index
+    return render_template('index.html', title='Home', form=form,
+                           posts=posts.items, next_url=next_url,
+                           prev_url=prev_url)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/malandru/microblog_2.0/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %} {% block content %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/microblog_2.0/app/templates/base.html", line 1, in top-level template code
+    {% extends "base.html" %} {% block content %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/microblog_2.0/app/templates/base.html", line 1, in top-level template code
+    {% extends "base.html" %} {% block content %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/microblog_2.0/app/templates/base.html", line 1, in top-level template code
+    {% extends "base.html" %} {% block content %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 973 more times]
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/utils.py", line 477, in get
+    return self[key]
+           ~~~~^^^^^
+RecursionError: maximum recursion depth exceeded
+2025-03-03 17:11:14,547 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
+2025-03-04 10:24:43,408 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
+2025-03-04 10:26:01,536 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
+2025-03-04 11:03:21,453 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
+2025-03-04 11:03:23,587 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
