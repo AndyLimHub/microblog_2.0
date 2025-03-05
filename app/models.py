@@ -8,6 +8,7 @@ from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from app import db, login
 import jwt
+from time import time
 from app import app, db, login
 
 
@@ -93,7 +94,6 @@ class User(UserMixin, db.Model):
         except Exception:
             return
         return db.session.get(User, id)
-
 
 @login.user_loader
 def load_user(id):
