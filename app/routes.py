@@ -6,7 +6,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 import sqlalchemy as sa
 
 from app import app, db
-from app.forms import LoginForm, EditProfileForm, RegistrationForm, EmptyForm, PostForm
+from app.forms import LoginForm, EditProfileForm, RegistrationForm, EmptyForm, PostForm, ResetPasswordRequestForm, ResetPasswordForm
 from app.models import User, Post
 
 @app.before_request
