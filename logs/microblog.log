@@ -1,19 +1,55 @@
-2025-03-11 11:47:29,956 ERROR: Exception on /login [POST] [in /Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py:875]
+2025-03-11 16:53:01,977 ERROR: Exception on /favicon.ico [GET] [in /Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py:875]
 Traceback (most recent call last):
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
-    self.dialect.do_execute(
-    ~~~~~~~~~~~~~~~~~~~~~~~^
-        cursor, str_statement, effective_parameters, context
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
-    cursor.execute(statement, parameters)
-    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-sqlite3.OperationalError: no such table: user
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
 
-The above exception was the direct cause of the following exception:
+During handling of the above exception, another exception occurred:
 
+Traceback (most recent call last):
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 802, in handle_user_exception
+    return self.handle_http_exception(e)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 777, in handle_http_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/Users/malandru/microblog_2.0/app/errors.py", line 6, in not_found_error
+    return render_template('404.html'), 404
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/malandru/microblog_2.0/app/templates/404.html", line 1, in top-level template code
+    {% extends "base.html" %} {% block content %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/microblog_2.0/app/templates/base.html", line 58, in top-level template code
+    {{ moment.include_moment() }}
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'moment' is undefined
+2025-03-11 16:53:22,098 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:58]
+2025-03-11 16:53:23,714 ERROR: Exception on / [GET] [in /Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -24,94 +60,30 @@ Traceback (most recent call last):
   File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/malandru/microblog_2.0/app/routes.py", line 63, in login
-    user = db.session.scalar(
-        sa.select(User).where(User.username == form.username.data))
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/sqlalchemy/orm/scoping.py", line 1841, in scalar
-    return self._proxied.scalar(
-           ~~~~~~~~~~~~~~~~~~~~^
-        statement,
-        ^^^^^^^^^^
-    ...<3 lines>...
-        **kw,
-        ^^^^^
-    )
-    ^
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/sqlalchemy/orm/session.py", line 2413, in scalar
-    return self._execute_internal(
-           ~~~~~~~~~~~~~~~~~~~~~~^
-        statement,
-        ^^^^^^^^^^
-    ...<4 lines>...
-        **kw,
-        ^^^^^
-    )
-    ^
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
-    result: Result[Any] = compile_state_cls.orm_execute_statement(
-                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        self,
-        ^^^^^
-    ...<4 lines>...
-        conn,
-        ^^^^^
-    )
-    ^
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/sqlalchemy/orm/context.py", line 305, in orm_execute_statement
-    result = conn.execute(
-        statement, params or {}, execution_options=execution_options
-    )
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
-    return meth(
-        self,
-        distilled_parameters,
-        execution_options or NO_OPTIONS,
-    )
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
-    return connection._execute_clauseelement(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        self, distilled_params, execution_options
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
-    ret = self._execute_context(
-        dialect,
-    ...<8 lines>...
-        cache_hit=cache_hit,
-    )
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
-    return self._exec_single_context(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~^
-        dialect, context, statement, parameters
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
-    self._handle_dbapi_exception(
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        e, str_statement, effective_parameters, cursor, context
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
-    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
-    self.dialect.do_execute(
-    ~~~~~~~~~~~~~~~~~~~~~~~^
-        cursor, str_statement, effective_parameters, context
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 942, in do_execute
-    cursor.execute(statement, parameters)
-    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
-[SQL: SELECT user.id, user.username, user.email, user.password_hash, user.about_me, user.last_seen 
-FROM user 
-WHERE user.username = ?]
-[parameters: ('Andy',)]
-(Background on this error at: https://sqlalche.me/e/20/e3q8)
-2025-03-11 11:49:50,608 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-11 11:49:50,942 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-11 11:50:15,878 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/microblog_2.0/app/routes.py", line 36, in index
+    return render_template('index.html', title='Home', form=form,
+                           posts=posts.items, next_url=next_url,
+                           prev_url=prev_url)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/malandru/microblog_2.0/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %} {% import "bootstrap_wtf.html" as wtf %} {% block
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/microblog_2.0/app/templates/base.html", line 58, in top-level template code
+    {{ moment.include_moment() }}
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'moment' is undefined
+2025-03-11 16:54:59,517 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:50]
+2025-03-11 16:56:34,240 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:50]

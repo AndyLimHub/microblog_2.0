@@ -1,76 +1,4 @@
-2025-03-03 17:09:15,001 ERROR: Exception on / [GET] [in /Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py:875]
-Traceback (most recent call last):
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/malandru/microblog_2.0/app/routes.py", line 36, in index
-    return render_template('index.html', title='Home', form=form,
-                           posts=posts.items, next_url=next_url,
-                           prev_url=prev_url)
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/templating.py", line 150, in render_template
-    return _render(app, template, context)
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/templating.py", line 131, in _render
-    rv = template.render(context)
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/malandru/microblog_2.0/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %} {% block content %}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/malandru/microblog_2.0/app/templates/base.html", line 1, in top-level template code
-    {% extends "base.html" %} {% block content %}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/malandru/microblog_2.0/app/templates/base.html", line 1, in top-level template code
-    {% extends "base.html" %} {% block content %}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/malandru/microblog_2.0/app/templates/base.html", line 1, in top-level template code
-    {% extends "base.html" %} {% block content %}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  [Previous line repeated 973 more times]
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/utils.py", line 477, in get
-    return self[key]
-           ~~~~^^^^^
-RecursionError: maximum recursion depth exceeded
-2025-03-03 17:11:14,547 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-04 10:24:43,408 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-04 10:26:01,536 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-04 11:03:21,453 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-04 11:03:23,587 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-04 11:15:16,258 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-04 11:29:41,519 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-04 11:37:44,741 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-04 11:40:44,060 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-04 11:42:04,845 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-04 11:55:00,680 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-04 13:50:20,651 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-04 15:50:41,905 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-04 16:55:13,926 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-04 16:59:28,030 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-05 15:35:16,611 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-06 00:52:48,261 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-06 11:17:29,564 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-06 11:48:18,238 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-10 12:54:03,202 INFO: Microblog startup [in /Users/andrewlim/microblog_2.0/app/__init__.py:59]
-2025-03-10 12:54:23,586 INFO: Microblog startup [in /Users/andrewlim/microblog_2.0/app/__init__.py:59]
-2025-03-10 12:54:29,452 INFO: Microblog startup [in /Users/andrewlim/microblog_2.0/app/__init__.py:59]
-2025-03-10 13:31:58,689 INFO: Microblog startup [in /Users/andrewlim/microblog_2.0/app/__init__.py:59]
-2025-03-10 13:32:30,656 INFO: Microblog startup [in /Users/andrewlim/microblog_2.0/app/__init__.py:59]
-2025-03-10 13:54:58,798 INFO: Microblog startup [in /Users/andrewlim/microblog_2.0/app/__init__.py:59]
-2025-03-11 11:28:37,836 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-11 11:30:17,257 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-11 11:33:38,774 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-11 11:33:50,786 ERROR: Exception on /login [GET] [in /Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py:875]
+2025-03-11 11:37:16,665 ERROR: Exception on /login [GET] [in /Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -104,5 +32,71 @@ Traceback (most recent call last):
     <p>New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
     ^^^^^^^^^^^^^^^^^^^^^^^^^
 jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
-2025-03-11 11:36:07,047 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-11 11:37:15,475 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
+2025-03-11 11:37:18,358 ERROR: Exception on /login [GET] [in /Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/malandru/microblog_2.0/app/routes.py", line 73, in login
+    return render_template('login.html', title='Sign In', form=form)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/malandru/microblog_2.0/app/templates/login.html", line 5, in template
+    <p>New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2025-03-11 11:37:19,548 ERROR: Exception on /login [GET] [in /Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/malandru/microblog_2.0/app/routes.py", line 73, in login
+    return render_template('login.html', title='Sign In', form=form)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/malandru/microblog_2.0/app/templates/login.html", line 5, in template
+    <p>New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.

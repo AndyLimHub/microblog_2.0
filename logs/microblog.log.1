@@ -1,36 +1,4 @@
-2025-03-11 11:41:12,897 ERROR: Exception on /reset_password_request [GET] [in /Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py:875]
-Traceback (most recent call last):
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/malandru/microblog_2.0/app/routes.py", line 98, in reset_password_request
-    form = ResetPasswordRequestForm()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-NameError: name 'ResetPasswordRequestForm' is not defined. Did you mean: 'reset_password_request'?
-2025-03-11 11:43:38,859 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-11 11:43:43,733 ERROR: Exception on /reset_password_request [GET] [in /Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py:875]
-Traceback (most recent call last):
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/malandru/microblog_2.0/app/routes.py", line 98, in reset_password_request
-    form = ResetPasswordRequestForm()
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-NameError: name 'ResetPasswordRequestForm' is not defined. Did you mean: 'reset_password_request'?
-2025-03-11 11:46:01,153 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-11 11:46:11,433 ERROR: Exception on /login [POST] [in /Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py:875]
+2025-03-11 11:47:29,956 ERROR: Exception on /login [POST] [in /Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
     self.dialect.do_execute(
@@ -144,5 +112,44 @@ FROM user
 WHERE user.username = ?]
 [parameters: ('Andy',)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
-2025-03-11 11:46:53,582 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
-2025-03-11 11:47:24,557 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
+2025-03-11 11:49:50,608 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
+2025-03-11 11:49:50,942 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
+2025-03-11 11:50:15,878 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
+2025-03-11 15:10:28,861 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:59]
+2025-03-11 16:53:00,671 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:58]
+2025-03-11 16:53:01,910 ERROR: Exception on / [GET] [in /Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/microblog_2.0/app/routes.py", line 36, in index
+    return render_template('index.html', title='Home', form=form,
+                           posts=posts.items, next_url=next_url,
+                           prev_url=prev_url)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/malandru/microblog_2.0/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %} {% import "bootstrap_wtf.html" as wtf %} {% block
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/microblog_2.0/app/templates/base.html", line 58, in top-level template code
+    {{ moment.include_moment() }}
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/malandru/.pyenv/versions/3.13.1/lib/python3.13/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'moment' is undefined
