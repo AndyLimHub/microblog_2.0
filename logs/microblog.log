@@ -87,3 +87,7 @@ Traceback (most recent call last):
 jinja2.exceptions.UndefinedError: 'moment' is undefined
 2025-03-11 16:54:59,517 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:50]
 2025-03-11 16:56:34,240 INFO: Microblog startup [in /Users/malandru/microblog_2.0/app/__init__.py:50]
+2025-03-12 10:37:14,450 INFO: Microblog startup [in /Users/andrewlim/microblog_2.0/app/__init__.py:50]
+2025-03-12 10:57:30,538 INFO: Microblog startup [in /Users/andrewlim/microblog_2.0/app/__init__.py:50]
+2025-03-12 11:32:48,678 INFO: Microblog startup [in /Users/andrewlim/microblog_2.0/app/__init__.py:50]
+2025-03-12 12:03:03,571 INFO: Microblog startup [in /Users/andrewlim/microblog_2.0/app/__init__.py:50]
